@@ -1,0 +1,11 @@
+/.idea
+
+/Arc-go/tmp
+/Arc-go/.idea
+
+
+/arc-vue/node_modules
+/arc-vue/.idea
+
+
+/tmp/build-errors.log
