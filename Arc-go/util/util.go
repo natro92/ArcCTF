@@ -52,8 +52,21 @@ func (s *StringSlice) Scan(value interface{}) error {
 	default:
 		return errors.New("invalid type for StringSlice")
 	}
-
 	return nil
+}
+
+func (s StringSlice) Contains(id StringSlice) bool {
+	/*
+	* 判断是否包含
+	 */
+	for _, i := range id {
+		for _, j := range s {
+			if i == j {
+				return true
+			}
+		}
+	}
+	return false
 }
 
 func GenerateUUID() string {

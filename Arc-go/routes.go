@@ -16,6 +16,7 @@ func CollectRoute(r *gin.Engine) *gin.Engine {
 	r.GET("/api/competition/all", controller.GetAllCompetitions)
 	r.POST("/api/competition/create", middleware.AuthMiddleWare(), controller.CreateCompetition)
 	r.GET("/api/competition/info", middleware.AuthMiddleWare(), controller.GetCompetitionInfo4User)
+	r.GET("/api/competition/join", middleware.AuthMiddleWare(), controller.JoinCompetition)
 
 	r.GET("/api/challenge/all", middleware.AuthMiddleWare(), controller.GetAllChallengesByCompetitionId)
 	r.GET("/api/challenge/info", middleware.AuthMiddleWare(), controller.GetChallengeInfo4User)
@@ -23,6 +24,9 @@ func CollectRoute(r *gin.Engine) *gin.Engine {
 
 	r.POST("/api/team/create", middleware.AuthMiddleWare(), controller.CreateNewTeam)
 	r.POST("/api/team/join", middleware.AuthMiddleWare(), controller.JoinTeam)
+	r.POST("/api/team/quit", middleware.AuthMiddleWare(), controller.QuitTeam)
+	r.GET("/api/team/info", middleware.AuthMiddleWare(), controller.GetTeamInfo)
+	r.POST("/api/team/dismiss", middleware.AuthMiddleWare(), controller.DismissTeam)
 
 	return r
 }

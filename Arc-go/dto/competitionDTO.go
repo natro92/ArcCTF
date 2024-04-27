@@ -7,6 +7,7 @@ import (
 )
 
 type CompetitionDto struct {
+	ID              uint             `json:"id"`
 	Title           string           `json:"title"`
 	Description     string           `json:"description"`
 	ParticipantsNum int              `json:"participants_num"`
@@ -18,6 +19,7 @@ type CompetitionDto struct {
 
 func ToCompetitionDto(competition model.Competition) CompetitionDto {
 	return CompetitionDto{
+		ID:              competition.ID,
 		Title:           competition.Title,
 		Description:     competition.Description,
 		ParticipantsNum: competition.ParticipantsNum,
